@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import userRoute from "./routes/userRoute.js";
+import chatRoute from "./routes/chatRoute.js";
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ const port = process.env.PORT || 5000;
 const uri = process.env.ATLAS_URI;
 
 app.use("/api/users", userRoute);
+app.use("/api/chats", chatRoute);
 
 app.get("/", (req, res) => {
   res.send("Welcome our chat app APIs...");
