@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import userRoute from "./routes/userRoute.js";
 import chatRoute from "./routes/chatRoute.js";
+import messageRoute from "./routes/messageRoute.js";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ const uri = process.env.ATLAS_URI;
 
 app.use("/api/users", userRoute);
 app.use("/api/chats", chatRoute);
+app.use("/api/messages", messageRoute);
 
 app.get("/", (req, res) => {
   res.send("Welcome our chat app APIs...");
